@@ -1,0 +1,17 @@
+name: Echo 1 Workflow
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  echo:
+    runs-on: ubuntu-latest  # Выбираем виртуальную машину с Ubuntu
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Шаг для получения кода из репозитория (необходим для последующих шагов)
+
+      - name: Echo 1
+        run: echo 1  # Эта команда будет выполняться при каждом пуше
